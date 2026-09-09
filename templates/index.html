@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fetal Health Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<body>
+
+    <div class="visualization-page">
+
+        <header class="page-header">
+
+            <h1>Fetal Health Model Visualization</h1>
+
+            <p>
+                Compare the performance of our machine learning models.
+            </p>
+
+            <a href="/" class="back-button">
+                ← Back to Prediction
+            </a>
+
+        </header>
+
+
+        <!-- Main Card -->
+        <main class="card">
+
+
+
+
+            <header>
+    <h1>Fetal Health Prediction</h1>
+
+    <div class="language-selector">
+        <label for="languageSelect">Language:</label>
+
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="te">తెలుగు</option>
+            <option value="hi">हिन्दी</option>
+            <option value="ta">தமிழ்</option>
+        </select>
+    </div>
+</header>
+
+            <h2>Enter CTG Parameters</h2>
+
+            <form id="predictionForm">
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="baseline_value">
+                            Baseline Value
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="baseline_value"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="accelerations">
+                            Accelerations
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="accelerations"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="fetal_movement">
+                            Fetal Movement
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="fetal_movement"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="uterine_contractions">
+                            Uterine Contractions
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="uterine_contractions"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="light_decelerations">
+                            Light Decelerations
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="light_decelerations"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="severe_decelerations">
+                            Severe Decelerations
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="severe_decelerations"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="prolongued_decelerations">
+                            Prolongued Decelerations
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="prolongued_decelerations"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="abnormal_short_term_variability">
+                            Abnormal Short Term Variability
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="abnormal_short_term_variability"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="mean_value_of_short_term_variability">
+                            Mean Value of Short Term Variability
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="mean_value_of_short_term_variability"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="percentage_of_time_abnormal_long_term_variability">
+                            Percentage of Time Abnormal Long Term Variability
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="percentage_of_time_abnormal_long_term_variability"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="mean_value_of_long_term_variability">
+                            Mean Value of Long Term Variability
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="mean_value_of_long_term_variability"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_width">
+                            Histogram Width
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_width"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_min">
+                            Histogram Min
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_min"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_max">
+                            Histogram Max
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_max"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_number_of_peaks">
+                            Histogram Number of Peaks
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_number_of_peaks"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_number_of_zeroes">
+                            Histogram Number of Zeroes
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_number_of_zeroes"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_mode">
+                            Histogram Mode
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_mode"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_mean">
+                            Histogram Mean
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_mean"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_median">
+                            Histogram Median
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_median"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_variance">
+                            Histogram Variance
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_variance"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="histogram_tendency">
+                            Histogram Tendency
+                        </label>
+
+                        <input type="number"
+                               step="any"
+                               id="histogram_tendency"
+                               required>
+                    </div>
+
+                </div>
+
+
+                <!-- Buttons -->
+                <div class="button-container">
+
+                    <button type="submit">
+                        Predict Fetal Health
+                    </button>
+
+                    <button type="button"
+                            id="resetButton"
+                            class="reset-button">
+                        Reset
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Result -->
+            <section id="result" class="result-card">
+
+                <h2>Fetal Health Report</h2>
+
+                <div id="resultStatus"
+                     class="result-status">
+                </div>
+
+                <div class="confidence">
+                    Model Confidence:
+                    <span id="confidence">0</span>%
+                </div>
+
+
+                <div class="probabilities">
+
+                    <div class="probability-box">
+                        <span>Normal</span>
+                        <strong id="normalProbability">
+                            0%
+                        </strong>
+                    </div>
+
+
+                    <div class="probability-box">
+                        <span>Suspect</span>
+                        <strong id="suspectProbability">
+                            0%
+                        </strong>
+                    </div>
+
+
+                    <div class="probability-box">
+                        <span>Pathological</span>
+                        <strong id="pathologicalProbability">
+                            0%
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        id="downloadButton"
+                        class="download-button">
+                    Download Report
+                </button>
+                <a href="/visualizations" class="visualization-button">
+                    View Model Visualizations 
+                </a>
+
+            </section>
+
+        </main>
+
+       
+
+        <!-- Footer -->
+        <footer>
+            <p>
+                Fetal Health Analysis • Machine Learning Project
+            </p>
+        </footer>
+
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

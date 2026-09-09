@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fetal Health - Model Visualizations</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/visualizations.css') }}">
+</head>
+
+<body>
+
+    <!-- Page Header -->
+
+    <header class="page-header">
+
+        <h1>Fetal Health Model Visualization</h1>
+
+        <p>
+            Machine Learning Model Performance Analysis
+        </p>
+
+        <a href="/" class="back-button">
+            ← Back to Prediction
+        </a>
+
+    </header>
+
+
+    <!-- Main Content -->
+
+    <main class="visualization-container">
+
+
+        <!-- 1. Model Accuracy -->
+
+        <section class="visualization-card">
+
+            <h2>Model Accuracy Comparison</h2>
+
+            <p>
+                Comparison of test accuracy across different
+                machine learning models.
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="accuracyChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- 2. Precision, Recall and F1-Score -->
+
+        <section class="visualization-card">
+
+            <h2>Precision, Recall and F1-Score</h2>
+
+            <p>
+                Comparison of precision, recall and F1-score
+                for each machine learning model.
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="metricsChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+        <!-- 3. XGBoost Class Performance -->
+
+        <section class="visualization-card">
+
+            <h2>XGBoost Class Performance</h2>
+
+            <p>
+                Precision, recall and F1-score achieved by
+                XGBoost for each fetal health class.
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="xgboostChart"></canvas>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="page-footer">
+
+        <p>
+            Fetal Health Analysis | Machine Learning Project
+        </p>
+
+    </footer>
+
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="{{ url_for('static', filename='js/visualizations.js') }}"></script>
+
+
+</body>
+
+</html>

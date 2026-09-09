@@ -1,0 +1,292 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+    color: #1e293b;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.header h1 {
+    font-size: 38px;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+
+.header p {
+    font-size: 17px;
+    color: #475569;
+}
+
+
+/* Main Card */
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+}
+
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+
+/* Input Grid */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.input-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 14px;
+}
+
+
+.input-group input {
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #f8fafc;
+    transition: 0.2s;
+}
+
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Buttons */
+
+.button-container {
+    text-align: center;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+button {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+
+.reset-button {
+    background: #64748b;
+}
+
+
+.reset-button:hover {
+    background: #475569;
+}
+
+
+/* Result */
+
+.result-card {
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    display: none;
+}
+
+
+.result-card h2 {
+    margin-bottom: 20px;
+}
+
+
+.result-status {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+.confidence {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+.confidence span {
+    font-weight: bold;
+}
+
+
+/* Probabilities */
+
+.probabilities {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+
+.probability-box {
+    background: white;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #dbeafe;
+}
+
+
+.probability-box span {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+.probability-box strong {
+    font-size: 22px;
+}
+
+
+/* Download */
+
+.download-button {
+    margin-top: 5px;
+}
+
+
+/* Footer */
+
+footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #475569;
+    font-size: 14px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .card {
+        padding: 25px 18px;
+    }
+
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+
+    .probabilities {
+        grid-template-columns: 1fr;
+    }
+
+
+    .button-container {
+        flex-direction: column;
+    }
+
+
+    button {
+        width: 100%;
+    }
+
+   .accuracy-chart-container {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+    .model-performance {
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+    }
+    
+    .visualization-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 22px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.visualization-button:hover {
+    opacity: 0.9;
+}
+}
